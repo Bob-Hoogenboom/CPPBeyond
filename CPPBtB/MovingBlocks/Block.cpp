@@ -46,6 +46,23 @@ Block::Block(Block&& other) noexcept {
     other.data = nullptr;
 }
 
+Block& Block::operator=(Block&& other)
+{
+    std::cout << "Move Assignment Operator is called \n";
+    if (this == &other) return *this;
+
+    delete[] data;
+
+    data = other.data;
+    size = other.size;
+
+    other.data = nullptr;
+    other.size = 0;
+
+    return *this;
+    // TODO: insert return statement here
+}
+
 //TODO: move-assignment operator
 #endif
 

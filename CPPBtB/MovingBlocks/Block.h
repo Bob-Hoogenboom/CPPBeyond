@@ -24,7 +24,9 @@ public:
 #ifdef MOVESEMANTICS
     // nog nodig voor de 'big five'
     Block(Block&& other) noexcept; // move-constructor
+
     //TODO: move-assignment operator
+    Block& operator=(Block&& other); //move-assignment-operator
 #endif
 
 private:
